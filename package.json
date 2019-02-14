@@ -1,0 +1,22 @@
+{
+  "name": "ttp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Luis M Garcia",
+  "license": "ISC",
+  "dependencies": {
+    "ethers": "^4.0.15",
+    "express": "^4.16.4",
+    "web3": "^1.0.0-beta.36"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.7"
+  }
+}

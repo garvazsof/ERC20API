@@ -1,0 +1,9 @@
+module.exports = {
+    PORT: 3000,
+    ethereum:{
+        contractAddress: '0xda442f572f893d4e49408ed729a0063bad5c0a87', 
+        abi: [{"constant":true,"inputs":[],"name":"getCurso","outputs":[{"name":"thecurso","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"getProfesor","outputs":[{"name":"theprofesor","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_matricula","type":"uint256"},{"name":"_nombreCompleto","type":"string"},{"name":"_campus","type":"string"},{"name":"_grupo","type":"string"}],"name":"registrarAlumno","outputs":[{"name":"ok","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"_matricula","type":"uint256"}],"name":"getPuntos","outputs":[{"name":"puntos","type":"int256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_matricula","type":"uint256"},{"name":"_puntos","type":"int256"}],"name":"modificaPuntos","outputs":[{"name":"saldo","type":"int256"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_curso","type":"uint256"}],"name":"modificaCurso","outputs":[{"name":"ok","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"inputs":[{"name":"_profesor","type":"address"},{"name":"_curso","type":"uint256"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"}],
+        privateKey: '42DB274D162A082E6BB2032A0C1A21958193FC7F34138EA08ADDB5166082FD0C',
+
+    }
+}

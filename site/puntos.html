@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Alta de Alumno</title>
+
+    <link rel="stylesheet" type="text/css" href="./main.css">
+    <script src="./web3.min.js"></script>
+
+</head>
+<body>
+    <div class="container">
+
+        <h1>Registrar Puntos de Alumno</h1>
+
+        <h2 id="Alumno"></h2>
+
+        <label for="matricula" class="col-lg-2 control-label">Matricula</label>
+        <input id="matricula" type="text">
+
+        <label for="puntos" class="col-lg-2 control-label">Puntos</label>
+        <input id="puntos" type="text" placeholder="use negativo para restar">
+
+        <button id="btnRegistrar">Registrar puntos</button>
+
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <script>
+      
+      $("#btnRegistrar").click(function() {
+  
+          var _matricula = $("#matricula").val();
+          var _puntos = $("#puntos").val();
+
+          const URL = 'http://localhost:3000/api/cursos/modificaPuntos';
+
+          const _data = {
+            matricula:_matricula,
+            puntos:_puntos};
+
+          $.ajax({
+              url: URL,
+              type: "POST",
+              data: JSON.stringify(_data),
+              contentType: "application/json; charset=utf-8",
+              dataType: "json",
+          }).then(function(result) {
+            $("#Alumno").html(
+              'Registro de puntos: ' + result[0].result +
+              ' Hash Transacción: ' + result[0].tx_hash);
+          });
+
+        // gestionpuntos.registrarAlumno(matricula,nombre,campus,grupo,
+        //   function(err, res){
+        //     if(err){
+        //       console.log(err);
+        //     }
+        //     else{
+        //       console.log(err);
+        //     }
+        //   }
+        // );
+
+        // var curso = gestionpuntos.getCurso({},function(err,result){
+        //   $("#Alumno").html('curso: ' + result);
+        // });
+
+      });
+
+    </script>
+
+</body>
+</html>
